@@ -1,0 +1,239 @@
+:root {
+  --light-grey: #F1F2F2;
+  --white: #FFFFFF;
+  --green: #00CF91;
+  --red: #BC0022;
+  --blue: #2300B0;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Montserrat', serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+body {
+  background: var(--light-grey);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  background: url(https://images.unsplash.com/photo-1518378379207-3418372afea3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite__header {
+  /* background: var(--green); */
+}
+
+.header__box::after {
+  background: rgba(0, 0, 0, 0.4);
+  content: '';
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite__header-inner {
+  padding: 20px 0;
+}
+
+.header__title {
+  color: var(--white);
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.form {
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#search {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  background: var(--white);
+  box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.header__btns {
+  display: flex;
+  gap: 10px;
+}
+
+#BtnSearch {
+  font-size: 18px;
+  text-transform: uppercase;
+  background: var(--blue);
+  z-index: 2;
+}
+
+.icon {
+  width: 18px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.btn {
+  color: var(--white);
+  padding: 5px 10px;
+  background: var(--green);
+  border-radius: 5px;
+  box-shadow: 1.5px 1.5px 1px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translate(1px, 1px);
+}
+
+.favorite {
+  box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.favorite:active {
+  transform: translate(2px, 2px);
+}
+
+.book__img {
+  width: 150px;
+  height: 250px;
+  border-radius: 5px;
+  background: url(https://avatanplus.com/files/resources/mid/577e3ef8cdf33155c525fc0c.png);
+}
+
+.books__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.book__inner {
+  width: 350px;
+  display: flex;
+  border: 1px solid #D1D3D4;
+  border-radius: 5px;
+  margin: 20px 0;
+  background: var(--white);
+}
+
+.book__descr {
+  margin: 10px;
+}
+
+.book__descr_title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.book__descr p {
+  margin-bottom: 5px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.book__descr p span {
+  font-weight: 600;
+}
+
+.book__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.more__link {
+  text-decoration: none;
+}
+
+.more__btn {
+  background: var(--light-grey);
+  color: #000;
+}
+
+/* .book__btn {
+  background: var(--green);
+  color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.danger__btn {
+  background: var(--red);
+}
+
+.favorites {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
