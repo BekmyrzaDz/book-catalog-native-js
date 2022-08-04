@@ -62,10 +62,6 @@ body {
   align-items: center;
 }
 
-.favorite__header {
-  /* background: var(--green); */
-}
-
 .header__box::after {
   background: rgba(0, 0, 0, 0.4);
   content: '';
@@ -213,13 +209,6 @@ body {
   background: var(--light-grey);
   color: #000;
 }
-
-/* .book__btn {
-  background: var(--green);
-  color: var(--white);
-  border-radius: 5px;
-  cursor: pointer;
-} */
 
 .danger__btn {
   background: var(--red);
