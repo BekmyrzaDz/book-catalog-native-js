@@ -115,20 +115,14 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function showFavorite(data) {
-    const booksInner = document.querySelector(".books__inner");
-    booksInner.innerHTML = "";
-
     const favorites = JSON.parse(localStorage.getItem("favorites"));
-    const html = renderList(favorites, data);
-    booksInner.insertAdjacentHTML("afterbegin", html);
+    renderList(favorites, data);
   }
 
   function renderList(list = [], data) {
     if (list) {
       const result = data.items.filter((item, i) => item.id === list[i]);
       return render(result);
-    } else {
-      return `<p class="center">Вы пока ничего не добавили!</p>`;
     }
   }
 });
