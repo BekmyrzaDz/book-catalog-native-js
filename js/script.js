@@ -17,12 +17,10 @@ window.addEventListener("DOMContentLoaded", () => {
   async function getData(url) {
     try {
       const resp = await fetch(url);
-      console.log(resp);
       const result = await resp.json();
-      console.log(result);
       render(result.items);
       favorite();
-      getDataOther(result);
+      getFavoriteData(result);
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +37,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const bookEl = document.createElement("div");
       bookEl.classList.add("book");
 
-      const button = `<div class="book__btn save__btn btn" data-id="${book.id}">Save</div>`;
+      const button = (
+        JSON.parse(localStorage.getItem("favorites")) || []
+      ).includes(book.id)
+        ? `<div class="book__btn btn danger__btn" data-id="${book.id}">Delete</div>`
+        : `<div class="book__btn save__btn btn" data-id="${book.id}">Save</div>`;
 
       let addBooks = "";
 
@@ -105,7 +107,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function getDataOther(data) {
+  function getFavoriteData(data) {
     document.querySelector(".favorite").addEventListener("click", (event) => {
       event.preventDefault();
       showFavorite(data);
@@ -123,20 +125,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function renderList(list = [], data) {
     if (list) {
-      // const booksInner = document.querySelector(".books__inner");
-      // booksInner.innerHTML = "";
-      console.log(data);
       const result = data.items.filter((item, i) => item.id === list[i]);
-      console.log(result);
       return render(result);
     } else {
       return `<p class="center">Вы пока ничего не добавили!</p>`;
     }
   }
 });
-
-/*
-Создать функцию, которая при клике на кнопку получит данные из API,
-сравнит айдишки из API и LocalSorage и выведет их на страницу вместо
-текущих элементов
-*/

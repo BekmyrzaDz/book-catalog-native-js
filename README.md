@@ -1,4 +1,4 @@
-# Book-catalog
+# Book catalog
 
 Mini-project Catalog of books.
 Written in Native JavaScript.
