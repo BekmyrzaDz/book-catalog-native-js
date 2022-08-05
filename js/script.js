@@ -2,10 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("BtnSearch").addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Мой ключ API
-    // Может понадобиться в будущем для масштабирования проекта
-    // const API_KEY = 'AIzaSyBKxIrdOF_OeuxYQJUWHtYYLJAVlF2n0F8';
-
     const search = document
       .getElementById("search")
       .value.split(" ")
